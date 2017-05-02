@@ -1,11 +1,4 @@
-<?php function active(){
-  if ($active = true) {
-    # code...
-  }
-}
-{
-  # code...
-} ?>
+<<?php require 'functions.php'; ?>
 
 <!DOCTYPE html>
 <html>
