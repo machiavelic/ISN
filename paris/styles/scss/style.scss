@@ -125,3 +125,15 @@ a{text-decoration: none; color: inherit}
 .mauvais{
   color: red;
 }
+
+
+//INSCRIPTION
+.form-group{
+  label{
+    float: left;
+    margin-left: 8px;
+  }
+  input{
+    margin-left: 5px;
+  }
+}

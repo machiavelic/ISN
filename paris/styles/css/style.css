@@ -92,4 +92,10 @@ a {
 .mauvais {
   color: red; }
 
+.form-group label {
+  float: left;
+  margin-left: 8px; }
+.form-group input {
+  margin-left: 5px; }
+
 /*# sourceMappingURL=style.css.map */
