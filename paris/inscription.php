@@ -1,5 +1,4 @@
-<?php require_once 'includes/header.php'; ?>
-
+<?php require_once('includes/functions.php'); ?>
 <?php
 if (!empty($_POST)) {
     $errors = array();
@@ -32,55 +31,62 @@ if (!empty($_POST)) {
     }
 
     if (empty($errors)) {
-        $req = $pdo->prepare("INSERT INTO users SET username = ?, password = ?, email = ?");
+        $req = $pdo->prepare("INSERT INTO users SET username = ?, password = ?, email = ?, confirmation_token = ?");
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-        $req->execute([$_POST['username'], $password,$_POST['email']]);
-        die('Votre compte a bien été crée');
+        $token = str_random(60);
+        $req->execute([$_POST['username'], $password,$_POST['email'], $token]);
+        $user_id = $pdo->lastInsertID();
+        echo "Veuillez cliquez sur ce lien pour confirmer votre inscription<br>127.0.0.1/paris/confirm.php?id=$user_id&token=$token";
     }
 }
 ?>
 
-<h1>S'inscrire</h1>
 
-<?php if (!empty($errors)):?>
+  <?php require_once 'includes/header.php';?>
+  <h1>S'inscrire</h1>
+  <?php if (!empty($errors)):?>
 
-  <div class="alert alert-danger">
-    <p>
-      Vous n'avez pas rempli le formulaire corectement
-    </p>
-    <ul>
-      <?php foreach ($errors as $error):?>
-          <li><?= $error ; ?></li>
-      <?php endforeach; ?>
-    </ul>
-  </div>
-<?php endif;  ?>
+    <div class="alert alert-danger" style="width:80%;">
+      <p>
+        Vous n'avez pas rempli le formulaire corectement
+      </p>
+      <ul>
+        <?php foreach ($errors as $error):?>
+            <li><?= $error ; ?></li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
+  <?php endif;  ?>
+  <div class="#" style="width:30%;">
 
-<form class="#" action="" method="post">
 
-  <div class="form-group">
-    <label for="">Pseudo</label>
-    <input type="text" name="username" class="form-control" >
-  </div>
+  <form class="#" action="" method="post">
 
-  <div class="form-group">
-    <label for="">email</label>
-    <input type="text" name="email" class="form-control" >
-  </div>
+    <div class="form-group">
+      <label for="">Pseudo</label>
+      <input type="text" name="username" class="form-control" >
+    </div>
 
-  <div class="form-group">
-    <label for="">Mot de passe</label>
-    <input type="password" name="password" class="form-control" >
-  </div>
+    <div class="form-group">
+      <label for="">email</label>
+      <input type="text" name="email" class="form-control" >
+    </div>
 
-  <div class="form-group">
-    <label for="">Confirmer le mot de passe </label>
-    <input type="password" name="password_confirm" class="form-control" >
-  </div>
+    <div class="form-group">
+      <label for="">Mot de passe</label>
+      <input type="password" name="password" class="form-control" >
+    </div>
 
-<button type="submit" class="btn btn-primary">Envoyer</button>
+    <div class="form-group">
+      <label for="">Confirmer le mot de passe </label>
+      <input type="password" name="password_confirm" class="form-control" >
+    </div>
 
-</form>
+  <button type="submit" class="btn btn-primary" style="margin-right: 378px;">Envoyer</button>
+
+  </form>
+</div>
+
 
 
 
