@@ -1,0 +1,109 @@
+html, body {
+  font-family: verdana, arial sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.4;
+  height: 100%;
+  background-size: cover;
+  color: black;
+  text-align: center;
+  background-image: url(../../images/fond1.jpg);
+  color: white; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+.header {
+  position: -fixed;
+  left: 0;
+  right: 0;
+  height: 66px;
+  line-height: 66px;
+  color: #fff;
+  background-color: #1AB21B; }
+
+.header_logo {
+  font-weight: bold;
+  padding: 0 25px;
+  float: left; }
+
+.Presentation {
+  margin: 10px; }
+  .Presentation p {
+    font-style: italic;
+    font-size: 22px; }
+
+.menu a {
+  padding: 0 10px; }
+.menu a:hover {
+  color: white;
+  font-weight: bold; }
+.menu .droite {
+  float: right; }
+.menu .gauche {
+  float: left; }
+
+.contenu {
+  padding: 20px; }
+  .contenu h2 {
+    margin: 10px 10px 10px 0px;
+    color: red; }
+  .contenu .bloc_1 {
+    float: left;
+    width: 45%;
+    height: 45%;
+    margin-bottom: 20px;
+    border-top: solid black 2px; }
+  .contenu .bloc_2 {
+    float: right;
+    width: 45%;
+    height: 45%;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    border-top: solid black 2px; }
+  .contenu .calendrier {
+    display: inline-block; }
+  .contenu .resultat {
+    float: right; }
+
+.fin {
+  float: left;
+  width: 100%;
+  background-color: #1AB21B;
+  margin: none;
+  font-family: Open Sans;
+  padding: 10px; }
+
+.apropos {
+  margin: 25px; }
+
+.logo {
+  float: right;
+  margin-right: 40px; }
+
+.tarif {
+  color: red;
+  margin-top: 10px; }
+
+.bon {
+  color: green; }
+
+.mauvais {
+  color: red; }
+
+.form-group label {
+  float: left;
+  margin-left: 8px; }
+.form-group input {
+  margin-left: 5px; }
+
+.form-group {
+  margin-bottom: 15px;
+  margin-left: 20px; }
+
+.btn {
+  margin-left: 507px;
+  margin-top: -83px; }
+
+/*# sourceMappingURL=style.css.map */

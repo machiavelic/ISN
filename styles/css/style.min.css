@@ -1,0 +1,1 @@
+*{margin:0;padding:0}ul{float:right}@-webkit-keyframes sliderleft{0%,20%{left:0}25%,45%{left:-100%}50%,70%{left:-200%}75%,95%{left:-300%}100%{left:-400%}}.slider{max-width:1000px;height:500px;overflow:hidden;margin:0 auto;border:solid 20px #fff}.slider figure{position:relative;width:500%;-webkit-animation:20s sliderleft infinite}.slider figure img{float:left;width:20%}
