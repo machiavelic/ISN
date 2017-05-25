@@ -1,16 +1,20 @@
 <?php
+session_start();
 if (!empty($_POST) &&  !empty($_POST['username']) && !empty($_POST['password'])) {
   require_once 'includes/db.php';
   require_once 'includes/functions.php';
   $req = $pdo->prepare('SELECT * FROM users WHERE (username = :username OR email = :username ) AND confirmed_at IS NOT NULL');
   $req->execute(['username' => $_POST['username']]);
-  $user = $req->fetch();
-  if(password_verify($_POST['password'], $user->password)){
-    session_start();
-    $_SESSION['auth'] = $user;
-    $_SESSION['flash']['success'] = 'Vous etes bien connecté';
-    header('Location:account.php');
-    exit();
+  $user = $req->fetch(PDO::FETCH_OBJ);
+  if($user){
+    if(password_verify($_POST['password'], $user->password)){
+      $_SESSION['auth'] = $user;
+      $_SESSION['flash']['success'] = 'Vous etes bien connecté';
+      header('Location:account.php');
+      exit();
+    }else{
+      $_SESSION['flash']['danger'] = 'Identifiant ou mot de passe incorrect';
+    }
   }else{
     $_SESSION['flash']['danger'] = 'Identifiant ou mot de passe incorrect';
   }
