@@ -1,6 +1,6 @@
 
 
-    <footer>
+    <footer style="position:fixed;bottom:0px !important;right:0px;left:0px;">
       <div class="fin">
         <span>Tous droits reservés &copy;PrediFOOT</span>
 

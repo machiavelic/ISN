@@ -1,10 +1,10 @@
-<?php require_once 'includes/header.php'; ?>
+<?php require_once 'includes/header.php';?>
 
   <div class="site-content">
     <div class="container">
       <div class="Presentation">
         <h2>Predi FOOT</h2>
-        <p> <marquee direction="left" scrollamount="10">   Bienvenue à vous chez Predi FOOT, ici avant on joue logiquement pour parler de foot le mieux possible est dans les meileurs conditions</marquee></p>
+        <p> <marquee direction="left" scrollamount="10">   Bienvenue à vous chez Predi FOOT, ici avant on joue logiquement pour parler de foot le mieux possible et dans les meileurs conditions</marquee></p>
       </div>
 
       <div class="slider">
@@ -21,7 +21,8 @@
           <div class="bloc_1">
             <h2>Qui sommes nous</h2>
             <p>
-              Nous sommes deux eleves du lycée toulouse lautrec
+              Nous sommes deux eleves du lycée toulouse lautrec <br>
+              <a href="APropos.php">En savoir plus...</a>
             </p>
           </div>
 

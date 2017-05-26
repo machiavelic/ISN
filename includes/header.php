@@ -12,10 +12,16 @@ if(session_status() == PHP_SESSION_NONE){
     <link rel="stylesheet" href="styles/css/style.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="styles/css/slider.css" media="screen" title="no title" charset="utf-8">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+    .btn{
+      margin-left: 0px;
+      margin-top: 0px;
+    }
+    </style>
   </head>
   <body>
 
-    <header class="header">
+    <header class="header" style="margin-top:0px;padding-top:0px">
       <a href="index.php" class="header_logo">Predi FOOT</a>
       <nav class="menu">
         <div class="gauche">
@@ -23,6 +29,7 @@ if(session_status() == PHP_SESSION_NONE){
           <a href="paris.php">Nos Predictions</a>
           <a href="APropos.php">A Propos</a>
           <a href="contact.php">Contact</a>
+          <a href="comment.php">Commentaire</a>
         </div>
         <div class="droite">
           <?php  if(isset($_SESSION['auth'])): ?>

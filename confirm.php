@@ -2,9 +2,9 @@
 $user_id = $_GET['id'];
 $token = $_GET['token'];
 require 'includes/db.php';
-$req = $pdo->prepare('SELECT confirmation_token FROM users WHERE id = ?');
+$req = $pdo->prepare('SELECT * FROM users WHERE id = ?');
 $req->execute([$user_id]);
-$user = $req->fetch();
+$user = $req->fetch(PDO::FETCH_OBJ);
 session_start();
 
 if($user && $user->confirmation_token == $token){
