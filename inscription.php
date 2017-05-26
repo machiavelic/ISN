@@ -44,10 +44,10 @@ if (!empty($_POST)) {
 
 
   <?php require_once 'includes/header.php';?>
-  <h1>S'inscrire</h1>
+  <h1 style="text-ailgn:left" >S'inscrire</h1>
   <?php if (!empty($errors)):?>
 
-    <div class="alert alert-danger" style="width:80%;">
+    <div class="alert alert-danger" style="width:50%;margin-left:27px;">
       <p>
         Vous n'avez pas rempli le formulaire corectement
       </p>
