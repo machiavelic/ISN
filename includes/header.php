@@ -17,11 +17,15 @@ if(session_status() == PHP_SESSION_NONE){
       margin-left: 0px;
       margin-top: 0px;
     }
+    .container{
+      margin-top:35px;
+      margin-bottom: 30px;
+    }
     </style>
   </head>
   <body>
 
-    <header class="header" style="margin-top:0px;padding-top:0px">
+    <header class="header" style="position:fixed;z-index:1000;top:0px !important;right:0px;left:0px;margin-bottom:10px;">
       <a href="index.php" class="header_logo">Predi FOOT</a>
       <nav class="menu">
         <div class="gauche">
@@ -29,10 +33,14 @@ if(session_status() == PHP_SESSION_NONE){
           <a href="paris.php">Nos Predictions</a>
           <a href="APropos.php">A Propos</a>
           <a href="contact.php">Contact</a>
+          <?php  if(isset($_SESSION['auth'])): ?>
           <a href="comment.php">Commentaire</a>
+          <a href="membres.php">Nos membres</a>
+        <? endif;?>
         </div>
         <div class="droite">
           <?php  if(isset($_SESSION['auth'])): ?>
+          <a href="account.php">Mon compte</a>
           <a href="logout.php">Déconnexion</a>
           <?php else: ?>
           <a href="login.php">Identification</a>
